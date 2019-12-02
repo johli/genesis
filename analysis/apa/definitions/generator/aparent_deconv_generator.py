@@ -1,0 +1,57 @@
+import keras
+from keras.models import Sequential, Model, load_model
+from keras.layers import Dense, Dropout, Activation, Flatten, Input, Lambda
+from keras.layers import Conv2D, MaxPooling2D, Conv1D, MaxPooling1D, LSTM, ConvLSTM2D, GRU, BatchNormalization, LocallyConnected2D, Permute
+from keras.layers import Concatenate, Reshape, Softmax, Conv2DTranspose, Embedding, Multiply
+from keras.callbacks import ModelCheckpoint, EarlyStopping
+from keras import regularizers
+from keras import backend as K
+import keras.losses
+
+import tensorflow as tf
+
+import isolearn.keras as iso
+
+import numpy as np
+
+
+#GENESIS Generator Model definitions
+def load_generator_network(batch_size, sequence_class, n_classes=1) :
+
+	#Generator network parameters
+	seq_length = 205
+	latent_size = 100
+	
+	#Generator inputs
+	latent_input_1 = Input(tensor=K.ones((batch_size, latent_size)), name='noise_input_1')
+	latent_input_2 = Input(tensor=K.ones((batch_size, latent_size)), name='noise_input_2')
+	latent_input_1_out = Lambda(lambda inp: inp * K.random_uniform((batch_size, latent_size), minval=-1.0, maxval=1.0), name='lambda_rand_input_1')(latent_input_1)
+	latent_input_2_out = Lambda(lambda inp: inp * K.random_uniform((batch_size, latent_size), minval=-1.0, maxval=1.0), name='lambda_rand_input_2')(latent_input_2)
+	
+	class_embedding = Embedding(n_classes, latent_size, embeddings_initializer='glorot_normal')(sequence_class)
+
+	seed_input_1 = Multiply()([latent_input_1_out, class_embedding])
+	seed_input_2 = Multiply()([latent_input_2_out, class_embedding])
+	
+	
+	#Policy network definition
+	policy_dense_1 = Dense(21 * 384, activation='relu', kernel_initializer='glorot_uniform', name='policy_dense_1')
+	
+	policy_dense_1_reshape = Reshape((21, 1, 384))
+	
+	policy_deconv_0 = Conv2DTranspose(256, (6, 1), strides=(2, 1), padding='valid', activation='relu', kernel_initializer='glorot_normal', name='policy_deconv_0')
+	
+	policy_deconv_1 = Conv2DTranspose(192, (7, 1), strides=(2, 1), padding='valid', activation='relu', kernel_initializer='glorot_normal', name='policy_deconv_1')
+	
+	policy_deconv_2 = Conv2DTranspose(128, (7, 1), strides=(2, 1), padding='valid', activation='relu', kernel_initializer='glorot_normal', name='policy_deconv_2')
+	
+	policy_deconv_3 = Conv2DTranspose(4, (7, 1), strides=(1, 1), padding='valid', activation='linear', kernel_initializer='glorot_normal', name='policy_deconv_3')
+	
+	batch_norm_0 = BatchNormalization(name='policy_batch_norm_0')
+	batch_norm_1 = BatchNormalization(name='policy_batch_norm_1')
+	batch_norm_2 = BatchNormalization(name='policy_batch_norm_2')
+
+	policy_out_1 = Reshape((seq_length, 4, 1))(policy_deconv_3(batch_norm_2(policy_deconv_2(batch_norm_1(policy_deconv_1(batch_norm_0(policy_deconv_0(policy_dense_1_reshape(policy_dense_1(seed_input_1))))))))))
+	policy_out_2 = Reshape((seq_length, 4, 1))(policy_deconv_3(batch_norm_2(policy_deconv_2(batch_norm_1(policy_deconv_1(batch_norm_0(policy_deconv_0(policy_dense_1_reshape(policy_dense_1(seed_input_2))))))))))
+	
+	return [latent_input_1, latent_input_2], [policy_out_1, policy_out_2]
