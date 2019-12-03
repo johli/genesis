@@ -1,7 +1,7 @@
 ![DEN Logo](https://github.com/johli/genesis/blob/master/den_github_logo.png?raw=true)
 
 # Deep Exploration in Sequence Generation
-Code for training deep generative models for DNA sequences in Keras. Implements convolutional generative networks which are optimized w.r.t. user-defined target biomolecule objectives given a sequence-predictive model.
+Code for training deep generative models for DNA sequences in Keras. Implements generative neural networks which are optimized w.r.t. a downstream deep learning predictor to maximize predicted fitness.
 
 The generators are trained to jointly maximize sequence diversity and predicted fitness. The training framework is described in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)".
 
@@ -10,12 +10,12 @@ The generators are trained to jointly maximize sequence diversity and predicted 
 #### Highlights
 - Deep generative neural networks for DNA, RNA & Protein sequences.
 - Train the generative model to maximize both sequence diversity and functional fitness (Deep Exploration).
-- Functional fitness is evaluated by a user-supplied sequence-predictive model and a cost function.
+- Fitness is evaluated by a user-supplied sequence-predictive model and a cost function.
 
 #### Features
 - Implements deep convolutional- and residual generative neural networks.
 - Supports vanilla, class-conditional and inverse-regression generators.
-- Generators support discrete one-hot sequence generation, enabling end-to-end optimization via straight-through gradients.
+- Generators support discrete 1-hot sequence sampling, enabling end-to-end training via straight-through gradients.
 
 ### Installation
 Install by cloning or forking the [github repository](https://github.com/johli/genesis.git):
