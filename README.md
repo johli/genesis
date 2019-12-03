@@ -71,3 +71,20 @@ Training and evaluation of Exploration networks for engineering (differential) A
 [Notebook 3a: Differential - CHO vs. MCF7 (CNN Predictor)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/splicing/splicing_differential_genesis_cnn_cho_vs_mcf7.ipynb)<br/>
 [Notebook 3b: Differential - CHO vs. MCF7 (Hexamer Regressor)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/splicing/splicing_differential_genesis_logistic_regression_both_regions_cho_vs_mcf7.ipynb)<br/>
 [Notebook 3c: Differential - CHO vs. MCF7 (Both Predictors)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/splicing/splicing_differential_genesis_cnn_and_logistic_regression_both_regions_cho_vs_mcf7.ipynb)<br/>
+
+### DEN Training GIFs
+
+
+#### Alternative Polyadenylation
+
+
+![APA Max Isoform GIF](https://github.com/johli/genesis/blob/master/analysis/apa/genesis_max_isoform_simple_fixed_sequences_with_seeds_and_pwms_all_small_32_colors.gif?raw=true)
+
+
+
+![APA Max Cleavage GIF](https://github.com/johli/genesis/blob/master/analysis/apa/genesis_max_cleavage_simple_fixed_sequences_with_seeds_and_pwms_all_small_32_colors.gif?raw=true)
+
+#### Alternative Splicing
+
+
+![De-Novo Splicing GIF](https://github.com/johli/genesis/blob/master/analysis/splicing/genesis_cleavage_multiclass_fixed_sequences_with_seeds_and_pwms_all_speedup_small.gif?raw=true)
