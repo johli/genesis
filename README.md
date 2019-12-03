@@ -35,15 +35,12 @@ python setup.py install
 #### Saved Models
 To aid reproducibility, we provide access to all trained models via the google drive link below:
 
-[Model Repository](https://drive.google.com/open?id=)
+[Model Repository](https://drive.google.com/open?id=11_wlrjrb0ee_UyaT9agMigpIsmGlFZzU)
 
-**apa/saved_models/isoform/apa_isoform_models.zip**
-> Deep Exploration Networks (DENs) for generating sequences with target APA isoform proportions.
+**apa/saved_models/apa_models.tar.gz**
+> Deep Exploration Networks (DENs) for generating sequences with target APA isoform proportions and cleavage.
 
-**apa/saved_models/cleavage/apa_cleavage_models.zip**
-> DENs for generating sequences with target APA cleavage position.
-
-**splicing/saved_models/splicing_models.zip**
+**splicing/saved_models/splicing_models.tar.gz**
 > DENs for generating sequences with target (differential) 5' splice donor usage proportions.
 
 ### Training & Analysis Notebooks 
