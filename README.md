@@ -46,17 +46,6 @@ To aid reproducibility, we provide access to all trained models via the google d
 **splicing/saved_models/splicing_models.zip**
 > DENs for generating sequences with target (differential) 5' splice donor usage proportions.
 
-We also include the following saved models:
-
-**apa/gan/saved_models/apa_gan_models.zip**
-> Sequence GANs trained on human & synthetic polyadenylation sites.
-
-**apa/vae/saved_models/apa_vae_models.zip**
-> Sequence VAEs trained on polyadenylation sites.
-
-**apa/ganception/saved_models/apa_ganception_models.zip**
-> DENs for conditioning GANs on a target objective by finding optimal GAN seeds.
-
 ### Training & Analysis Notebooks 
 The following jupyter notebooks contain all of the training code & analyses that were part of the paper.
 We also include additional analyses and models which users may find useful.
