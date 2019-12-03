@@ -3,7 +3,7 @@
 # Deep Exploration in Sequence Generation
 Code for training deep generative models for DNA sequences in Keras. Implements generative neural networks which are optimized w.r.t. a downstream deep learning predictor to maximize predicted fitness.
 
-The generators are trained to jointly maximize sequence diversity and predicted fitness. The training framework is described in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)".
+The generators are trained to jointly maximize sequence diversity and predicted fitness. The framework is described in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)".
 
 *1st Conference on Machine Learning in Computational Biology, (MLCB 2019), Vancouver, Canada.
 
@@ -39,17 +39,23 @@ To aid reproducibility, we provide access to all trained models via the google d
 
 **apa/saved_models/isoform/apa_isoform_models.zip**
 > Deep Exploration Networks (DENs) for generating sequences with target APA isoform proportions.
+
 **apa/saved_models/cleavage/apa_cleavage_models.zip**
 > DENs for generating sequences with target APA cleavage position.
-**apa/gan/saved_models/apa_gan_models.zip**
-> Sequence GANs trained on human & synthetic polyadenylation sites.
-**apa/vae/saved_models/apa_vae_models.zip**
-> Sequence VAEs trained on polyadenylation sites.
-**apa/ganception/saved_models/apa_ganception_models.zip**
-> DENs for conditioning GANs on a target objective by finding optimal GAN seeds.
+
 **splicing/saved_models/splicing_models.zip**
 > DENs for generating sequences with target (differential) 5' splice donor usage proportions.
 
+We also include the following saved models:
+
+**apa/gan/saved_models/apa_gan_models.zip**
+> Sequence GANs trained on human & synthetic polyadenylation sites.
+
+**apa/vae/saved_models/apa_vae_models.zip**
+> Sequence VAEs trained on polyadenylation sites.
+
+**apa/ganception/saved_models/apa_ganception_models.zip**
+> DENs for conditioning GANs on a target objective by finding optimal GAN seeds.
 
 ### Training & Analysis Notebooks 
 The following jupyter notebooks contain all of the training code & analyses that were part of the paper.
