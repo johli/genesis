@@ -15,7 +15,7 @@ The generators are trained to jointly maximize sequence diversity and predicted 
 #### Features
 - Implements deep convolutional- and residual generative neural networks.
 - Supports vanilla, class-conditional and inverse-regression generators.
-- Generators support discrete 1-hot sequence sampling, enabling end-to-end training via straight-through gradients.
+- Generators support 1-hot sequence sampling, enabling end-to-end training via straight-through gradients.
 
 ### Installation
 Install by cloning or forking the [github repository](https://github.com/johli/genesis.git):
