@@ -46,7 +46,7 @@ To aid reproducibility, we provide access to all trained models via the google d
 
 ### Training & Analysis Notebooks 
 The following jupyter notebooks contain all of the training code & analyses that were part of the paper.
-We also include additional analyses and models which users may find useful.
+We also include additional analyses and models which users may find useful. We used the following fitness predictors in our analyses: APARENT [(Bogard et. al., 2019)](https://doi.org/10.1016/j.cell.2019.04.046), DragoNN [(Kundaje Lab)](https://github.com/kundajelab/dragonn), MPRA-DragoNN [(Movva et. al., 2019)](https://doi.org/10.1371/journal.pone.0218073) and our own [(Cell line-specific splicing predictor)](https://github.com/johli/splirent). For some of the benchmarks, we use the Feedback-GAN code ([Gupta et. al., 2019](https://doi.org/10.1038/s42256-019-0017-4); [Github](https://github.com/av1659/fbgan)) and CbAS code ([Brookes et. al., 2019](https://arxiv.org/abs/1901.10060); [Github](https://github.com/dhbrookes/CbAS)).
 
 #### Alternative Polyadenylation
 Training and evaluation of Exploration networks for engineering Alternative Polyadenylation signals.
