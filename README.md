@@ -9,13 +9,13 @@ The generators are trained in a closed loop of backpropagation to jointly maximi
 
 #### Highlights
 - Deep generative neural networks for DNA, RNA & protein sequences.
-- Train the generative model to maximize both sequence diversity and functional fitness (Deep Exploration).
-- Fitness is evaluated by a user-supplied sequence-predictive model and a cost function.
+- Train the generator to maximize both diversity and fitness.
+- Fitness is evaluated by a user-supplied sequence-predictive model and cost function.
 
 #### Features
 - Implements deep convolutional- and residual generative neural networks.
 - Supports vanilla, class-conditional and inverse-regression generators.
-- Generators support one-hot sequence sampling, enabling end-to-end training via straight-through gradients.
+- Generators support one-hot sampling, enabling end-to-end training via straight-through gradients.
 - Optionally maintain likelihood in the generated sequences during training by using importance sampling of a pre-trained variational autoencoder.
 
 ### Installation
