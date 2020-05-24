@@ -1,21 +1,22 @@
 ![DEN Logo](https://github.com/johli/genesis/blob/master/den_github_logo.png?raw=true)
 
 # Deep Exploration in Sequence Generation
-Code for training deep generative models for DNA sequences in Keras. Implements generative neural networks which are optimized w.r.t. a downstream deep learning predictor to maximize predicted fitness.
+Code for training deep generative models of DNA, RNA and protein sequences in Keras. Implements a class of activation-maximizing generative neural networks (Deep Exploration Networks, or DENs) which are optimized with respect to a downstream deep learning predictor to maximize fitness. DENs explicitly maximize sequence diversity by sampling *two* independent patterns at each forward pass of backpropagation and imposing a similarity penalty on those samples. The similarity penalty is either specified on the level of sequences (e.g. one-hot cosine-similarity) or on the basis of latent feature encoder. Finally, DENs maintain the confidence in generated sequences during backpropagation by incorporating variational autoencoders (VAEs) to estimate their likelihood. Likelihood is approximated by importance sampling and gradients are backpropagated from the VAE to the DEN using straight-through (ST) gradients.
 
-The generators are trained to jointly maximize sequence diversity and predicted fitness. The framework is described in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)".
+The generators are trained in a closed loop of backpropagation to jointly maximize sequence diversity and predicted fitness. The framework is described in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)".
 
 *1st Conference on Machine Learning in Computational Biology, (MLCB 2019), Vancouver, Canada.
 
 #### Highlights
-- Deep generative neural networks for DNA, RNA & Protein sequences.
+- Deep generative neural networks for DNA, RNA & protein sequences.
 - Train the generative model to maximize both sequence diversity and functional fitness (Deep Exploration).
 - Fitness is evaluated by a user-supplied sequence-predictive model and a cost function.
 
 #### Features
 - Implements deep convolutional- and residual generative neural networks.
 - Supports vanilla, class-conditional and inverse-regression generators.
-- Generators support 1-hot sequence sampling, enabling end-to-end training via straight-through gradients.
+- Generators support one-hot sequence sampling, enabling end-to-end training via straight-through gradients.
+- Optionally maintain likelihood in the generated sequences during training by using importance sampling of a pre-trained variational autoencoder.
 
 ### Installation
 Install by cloning or forking the [github repository](https://github.com/johli/genesis.git):
@@ -59,9 +60,9 @@ Training and evaluation of Exploration networks for engineering Alternative Poly
 [Notebook 4: Engineering Cleavage Position (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_cleavage_genesis.ipynb)<br/>
 [Notebook 5: Inverse APA Isoform Regression (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_isoform_regression_genesis.ipynb)<br/>
 <br/>
-[Bonus 1: Human pA Sequence GAN (APADB)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/gan/train_sequence_sngan_new_resnet_multisample_batchnorm_normal_apadb.ipynb)<br/>
-[Bonus 2: Human pA Sequence VAE (APADB)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/vae/train_sequence_vae_all_code_partials_apadb_new_resnet_len_160.ipynb)<br/>
-[Bonus 3: Max APA Isoform GANception (ALIEN1)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/ganception/apa_max_isoform_genesis_wgan_simple_singlesample_descent_normal_latent_similarity.ipynb)<br/>
+[Extra 1: Native Human pA Sequence GAN (APADB)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/gan/train_sequence_sngan_new_resnet_multisample_batchnorm_normal_apadb.ipynb)<br/>
+[Extra 2: Native Human pA Sequence VAE (APADB)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/vae/train_sequence_vae_all_code_partials_apadb_new_resnet_len_160.ipynb)<br/>
+[Extra 3: Max APA Isoform GANception (ALIEN1)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/ganception/apa_max_isoform_genesis_wgan_simple_singlesample_descent_normal_latent_similarity.ipynb)<br/>
 
 #### Alternative Splicing
 Training and evaluation of Exploration networks for engineering (differential) Alternative Splicing.
