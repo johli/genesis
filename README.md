@@ -54,15 +54,31 @@ Training and evaluation of Exploration networks for engineering Alternative Poly
 [Notebook 1a: Engineering APA Isoforms (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_target_isoform_genesis_simple.ipynb)<br/>
 [Notebook 1b: Engineering APA Isoforms (ALIEN2 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_target_isoform_genesis_doubledope.ipynb)<br/>
 [Notebook 1c: Engineering APA Isoforms (TOMM5 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_target_isoform_genesis_tomm5.ipynb)<br/>
-[Notebook 2a: Significance of Similarity Loss (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_repelweight.ipynb)<br/>
-[Notebook 2b: Significance of Similarity Loss (ALIEN2 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_eval_repelweight.ipynb)<br/>
-[Notebook 3: PWMs or Discrete One-Hot Samples? (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_target_isoform_genesis_eval_sampling_modes.ipynb)<br/>
+[Notebook 2a: Significance of Diversity Cost (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_repelweight.ipynb)<br/>
+[Notebook 2b: Significance of Diversity Cost (ALIEN2 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_eval_repelweight.ipynb)<br/>
+[Notebook 3a: PWMs or Straight-Through Approximation?](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_eval_sampling_modes_no_entropy_with_edit_distances.ipynb)<br/>
+[Notebook 3b: PWMs or Straight-Through Approximation? (Entropy Penalty)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_eval_sampling_modes_with_edit_distances.ipynb)<br/>
 [Notebook 4: Engineering Cleavage Position (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_cleavage_genesis.ipynb)<br/>
 [Notebook 5: Inverse APA Isoform Regression (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_isoform_regression_genesis.ipynb)<br/>
+[Notebook 6a: Maximal APA Isoform (Sequence Diversity)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple.ipynb) [(Earthmover)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_earthmover.ipynb)<br/>
+[Notebook 6b: Maximal APA Isoform (Latent Diversity)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_predictor_latent_similarity_cosine.ipynb) [(Earthmover)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_predictor_latent_similarity_cosine_earthmover.ipynb)<br/>
+[Notebook 7a: Benchmark Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_models.ipynb)<br/>
+[Notebook 7b: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_basinhopping_trajs.ipynb)<br/>
 <br/>
 [Extra 1: Native Human pA Sequence GAN (APADB)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/gan/train_sequence_sngan_new_resnet_multisample_batchnorm_normal_apadb.ipynb)<br/>
 [Extra 2: Native Human pA Sequence VAE (APADB)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/vae/train_sequence_vae_all_code_partials_apadb_new_resnet_len_160.ipynb)<br/>
 [Extra 3: Max APA Isoform GANception (ALIEN1)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/ganception/apa_max_isoform_genesis_wgan_simple_singlesample_descent_normal_latent_similarity.ipynb)<br/>
+
+#### Alternative Polyadenylation (Likelihood-bounded)
+Addtional examples of engineering Alternative Polyadenylation signals using *Likelihood-bounded* Exploration networks. We combine importance sampling of a variational autoencoder (VAE) and straight-through approximation to propagate likelihood gradients to the generator.
+
+[Notebook 0: Evaluate Variational Autoencoders](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_eval_vaes.ipynb)<br/>
+[Notebook 0a: VAE Training Script (Weak APA)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/vae/train_sequence_vae_all_code_partials_doubledope_old_resnet_len_128_weak_very_high_kl.ipynb)<br/>
+[Notebook 0b: VAE Training Script (Strong APA)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/vae/train_sequence_vae_all_code_partials_doubledope_old_resnet_len_128_strong_very_high_kl.ipynb)<br/>
+[Notebook 1: Evaluate Likelihood-bounded DENs (Weak VAE)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_lower_fitness_eval_generators.ipynb)<br/>
+Notebook 1a/b/c/d: DEN Training Scripts (Weak VAE) ([Only Fitness](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_only_fitness.ipynb) | [Margin -2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_vae_margin_neg_2_lower_fitness.ipynb) | [Margin 0](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_margin_0_lower_fitness.ipynb) | [Margin +2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_vae_margin_pos_2_lower_fitness.ipynb))<br/>
+[Notebook 2: Evaluate Likelihood-bounded DENs (Strong VAE)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_lower_fitness_eval_generators.ipynb)<br/>
+Notebook 2a/b/c/d: DEN Training Scripts (Strong VAE) ([Only Fitness](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_only_fitness.ipynb) | [Margin -2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_margin_neg_2_lower_fitness.ipynb) | [Margin 0](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_margin_0_lower_fitness.ipynb) | [Margin +2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_vae_margin_pos_2_lower_fitness.ipynb))<br/>
 
 #### Alternative Splicing
 Training and evaluation of Exploration networks for engineering (differential) Alternative Splicing.
@@ -87,14 +103,14 @@ Benchmark evaluation for the DragoNN fitness predictor.
 [Notebook 1a: Maximal TF Binding Score (Sequence Diversity)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_earthmover.ipynb)<br/>
 [Notebook 1b: Maximal TF Binding Score (Latent Diversity)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_earthmover_latent_penalty.ipynb)<br/>
 [Notebook 2a: Benchmark Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_eval_models.ipynb)<br/>
-[Notebook 2a: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_eval_basinhopping_trajs.ipynb)<br/>
+[Notebook 2b: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_eval_basinhopping_trajs.ipynb)<br/>
 
 #### Transcriptional Activity (MPRA-DragoNN)
 Benchmark evaluation for the MPRA-DragoNN fitness predictor.
 
 [Notebook 1: Maximal Transcriptional Activity](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/mpradragonn/mpradragonn_genesis_sv40_max_activity_earthmover.ipynb)<br/>
 [Notebook 2a: Benchmark Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/mpradragonn/mpradragonn_genesis_sv40_max_activity_eval_models.ipynb)<br/>
-[Notebook 2a: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/mpradragonn/mpradragonn_genesis_sv40_max_activity_eval_basinhopping_trajs.ipynb)<br/>
+[Notebook 2b: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/mpradragonn/mpradragonn_genesis_sv40_max_activity_eval_basinhopping_trajs.ipynb)<br/>
 
 ### DEN Training GIFs
 The following GIFs illustrate how the Deep Exploration Networks converge on generating maximally fit functional sequences while retaining sequence diversity. Throughout training, we track a set of randomly chosen input seeds and animate the corresponding generated sequences (with their fitness costs).
