@@ -62,6 +62,7 @@ Training and evaluation of Exploration networks for engineering Alternative Poly
 [Notebook 5: Inverse APA Isoform Regression (ALIEN1 Library)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_isoform_regression_genesis.ipynb)<br/>
 [Notebook 6a: Maximal APA Isoform (Sequence Diversity)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple.ipynb) [(Earthmover)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_earthmover.ipynb)<br/>
 [Notebook 6b: Maximal APA Isoform (Latent Diversity)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_predictor_latent_similarity_cosine.ipynb) [(Earthmover)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_predictor_latent_similarity_cosine_earthmover.ipynb)<br/>
+[Notebook 6c: Evaluate Diversity Costs (Sequence & Latent)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_models_kl_loss.ipynb)<br/>
 [Notebook 7a: Benchmark Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_models.ipynb)<br/>
 [Notebook 7b: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_basinhopping_trajs.ipynb)<br/>
 <br/>
