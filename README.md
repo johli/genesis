@@ -89,6 +89,13 @@ Benchmark evaluation for the DragoNN fitness predictor.
 [Notebook 2a: Benchmark Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_eval_models.ipynb)<br/>
 [Notebook 2a: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_eval_basinhopping_trajs.ipynb)<br/>
 
+#### Transcriptional Activity (MPRA-DragoNN)
+Benchmark evaluation for the MPRA-DragoNN fitness predictor.
+
+[Notebook 1: Maximal Transcriptional Activity](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/mpradragonn/mpradragonn_genesis_sv40_max_activity_earthmover.ipynb)<br/>
+[Notebook 2a: Benchmark Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/mpradragonn/mpradragonn_genesis_sv40_max_activity_eval_models.ipynb)<br/>
+[Notebook 2a: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/mpradragonn/mpradragonn_genesis_sv40_max_activity_eval_basinhopping_trajs.ipynb)<br/>
+
 ### DEN Training GIFs
 The following GIFs illustrate how the Deep Exploration Networks converge on generating maximally fit functional sequences while retaining sequence diversity. Throughout training, we track a set of randomly chosen input seeds and animate the corresponding generated sequences (with their fitness costs).
 
