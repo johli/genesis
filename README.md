@@ -74,8 +74,9 @@ Training and evaluation of Exploration networks for engineering (differential) A
 [Notebook 3c: Differential - CHO vs. MCF7 (Both Predictors)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/splicing/splicing_differential_genesis_cnn_and_logistic_regression_both_regions_cho_vs_mcf7.ipynb)<br/>
 
 #### GFP
-Training and evaluation of *Likelihood-bounded* Exploration networks for engineering GFP variants. Here we combine importance sampling of a variational autoencoder (VAE) and straight-through approximation to propagate likelihood gradients to the generator. The benchmarking test bed is adapted from ([Brookes et. al., 2019](https://arxiv.org/abs/1901.10060); [Github](https://github.com/dhbrookes/CbAS)).
+Evaluation of *Likelihood-bounded* DENs for engineering GFP variants. Here we combine importance sampling of a variational autoencoder (VAE) and straight-through approximation to propagate likelihood gradients to the generator. The benchmarking test bed is adapted from ([Brookes et. al., 2019](https://arxiv.org/abs/1901.10060); [Github](https://github.com/dhbrookes/CbAS)).
 
+[Notebook 0: Importance-Sampled Train Set Likelihoods (VAE)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/gfp_test_vaes.ipynb)<br/>
 [Notebook 1: Likelihood-bounded DEN Training](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/gfp_sf_kl_den_repeats_with_edit_distances.ipynb)<br/>
 [Notebook 2a: Plot Bar Chart Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/plotting_kl_den_sf_with_edit_distances.ipynb)<br/>
 [Notebook 2b: Plot Trajectory Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/plotting_kl_den_sf_traj.ipynb)<br/>
