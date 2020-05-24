@@ -67,9 +67,9 @@ def get_target_entropy_ame(pwm_start=0, pwm_end=100, target_bits=2.0) :
     
     return target_entropy_ame
 
-def get_margin_entropy(pwm_start=0, pwm_end=100, min_bits=1.0) :
+def get_margin_entropy_ame(pwm_start=0, pwm_end=100, min_bits=1.0) :
     
-    def margin_entropy(pwm) :
+    def margin_entropy_ame(pwm) :
         pwm_section = pwm[:, pwm_start:pwm_end, :, :]
         entropy = pwm_section * -K.log(K.clip(pwm_section, K.epsilon(), 1. - K.epsilon())) / K.log(2.0)
         entropy = K.sum(entropy, axis=(2, 3))
@@ -77,12 +77,12 @@ def get_margin_entropy(pwm_start=0, pwm_end=100, min_bits=1.0) :
 
         mean_conservation = K.mean(conservation, axis=-1)
 
-        margin_entropy_cost = K.switch(mean_conservation < K.constant(min_bits, shape=(1,)), min_bits - mean_conservation, K.zeros_like(mean_conservation))
+        margin_conservation = K.switch(mean_conservation < K.constant(min_bits, shape=(1,)), K.constant(min_bits, shape=(1,)) - mean_conservation, K.zeros_like(mean_conservation))
     
-        return margin_entropy_cost
+        return margin_conservation
 
     
-    return margin_entropy
+    return margin_entropy_ame
 
 def get_target_entropy_sme_masked(pwm_start=0, pwm_end=100, target_bits=2.0) :
     
@@ -99,6 +99,27 @@ def get_target_entropy_sme_masked(pwm_start=0, pwm_end=100, target_bits=2.0) :
         return ((K.sum(conservation * mask, axis=-1) / n_unmasked) - target_bits)**2
     
     return target_entropy_sme_masked
+
+def get_margin_entropy_ame_masked(pwm_start=0, pwm_end=100, min_bits=2.0) :
+    
+    def margin_entropy_ame(pwm, pwm_mask) :
+        pwm_section = pwm[:, pwm_start:pwm_end, :, :]
+        entropy = pwm_section * -K.log(K.clip(pwm_section, K.epsilon(), 1. - K.epsilon())) / K.log(2.0)
+        entropy = K.sum(entropy, axis=(2, 3))
+        conservation = 2.0 - entropy
+
+        pwm_mask_section = pwm_mask[:, pwm_start:pwm_end, :, :]
+        mask = K.max(pwm_mask_section, axis=(2, 3))
+        n_unmasked = K.sum(mask, axis=-1)
+        
+        mean_conservation = K.sum(conservation * mask, axis=-1) / n_unmasked
+        
+        margin_conservation = K.switch(mean_conservation < K.constant(min_bits, shape=(1,)), K.constant(min_bits, shape=(1,)) - mean_conservation, K.zeros_like(mean_conservation))
+
+        return margin_conservation
+    
+    return margin_entropy_ame
+
 
 def get_pwm_cross_entropy(pwm_start=0, pwm_end=100) :
 
@@ -375,6 +396,6 @@ def build_loss_model(predictor_model, loss_func, extra_loss_tensors=[]) :
 
 	loss_out = Lambda(lambda out: loss_func(out), output_shape = (1,))(predictor_model.inputs + predictor_model.outputs + extra_loss_tensors)
 
-	loss_model = Model(predictor_model.inputs + extra_loss_tensors, loss_out)
+	loss_model = Model(predictor_model.inputs, loss_out)#extra_loss_tensors
 
 	return 'loss_model', loss_model

@@ -20,7 +20,8 @@ from keras import backend as K
 def letterAt(letter, x, y, yscale=1, ax=None, color=None, alpha=1.0):
 
 	#fp = FontProperties(family="Arial", weight="bold")
-	fp = FontProperties(family="Ubuntu", weight="bold")
+	#fp = FontProperties(family="Ubuntu", weight="bold")
+	fp = FontProperties(family="DejaVu Sans", weight="bold")
 	globscale = 1.35
 	LETTERS = {	"T" : TextPath((-0.305, 0), "T", size=1, prop=fp),
 				"G" : TextPath((-0.384, 0), "G", size=1, prop=fp),
