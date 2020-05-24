@@ -81,6 +81,14 @@ Evaluation of *Likelihood-bounded* DENs for engineering GFP variants. Here we co
 [Notebook 2a: Plot Bar Chart Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/plotting_kl_den_sf_with_edit_distances.ipynb)<br/>
 [Notebook 2b: Plot Trajectory Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/plotting_kl_den_sf_traj.ipynb)<br/>
 
+#### SPI1 TF Binding (DragoNN)
+Benchmark evaluation for the DragoNN fitness predictor.
+
+[Notebook 1a: Maximal TF Binding Score (Sequence Diversity)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_earthmover.ipynb)<br/>
+[Notebook 1b: Maximal TF Binding Score (Latent Diversity)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_earthmover_latent_penalty.ipynb)<br/>
+[Notebook 2a: Benchmark Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_eval_models.ipynb)<br/>
+[Notebook 2a: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/dragonn/dragonn_genesis_max_spi1_eval_basinhopping_trajs.ipynb)<br/>
+
 ### DEN Training GIFs
 The following GIFs illustrate how the Deep Exploration Networks converge on generating maximally fit functional sequences while retaining sequence diversity. Throughout training, we track a set of randomly chosen input seeds and animate the corresponding generated sequences (with their fitness costs).
 
