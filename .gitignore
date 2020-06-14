@@ -23,6 +23,8 @@ __pycache__/
 *.eps
 *.svg
 *.png
+*.tar.gz
+*.zip
 
 !den_github_logo.png
 
