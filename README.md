@@ -38,7 +38,7 @@ To aid reproducibility, we provide access to all trained models via the google d
 
 [Model Repository](https://drive.google.com/open?id=11_wlrjrb0ee_UyaT9agMigpIsmGlFZzU)
 
-Unzip each compressed model archive in the corresponding sub-folder in the *analysis* root folder. Below follows a brief inventory of the google drive model repository:
+Unzip each compressed model archive in the corresponding sub-folder of the *analysis* root folder in the Github repo. Below follows a brief inventory of the google drive repository:
 
 **apa/**
 > Deep Exploration Networks (DENs) for generating sequences with target/maximal APA isoform proportions and cleavage. Contains several model versions used in various benchmark comparisons.
