@@ -38,11 +38,25 @@ To aid reproducibility, we provide access to all trained models via the google d
 
 [Model Repository](https://drive.google.com/open?id=11_wlrjrb0ee_UyaT9agMigpIsmGlFZzU)
 
-**apa/saved_models/apa_models.tar.gz**
-> Deep Exploration Networks (DENs) for generating sequences with target APA isoform proportions and cleavage.
+Unzip each compressed model archive in the corresponding sub-folder in the *analysis* root folder. Below follows a brief inventory of the google drive model repository:
 
-**splicing/saved_models/splicing_models.tar.gz**
+**apa/**
+> Deep Exploration Networks (DENs) for generating sequences with target/maximal APA isoform proportions and cleavage. Contains several model versions used in various benchmark comparisons.
+
+**splicing/**
 > DENs for generating sequences with target (differential) 5' splice donor usage proportions.
+
+**mpradragonn/**
+> DENs for maximizing the MPRA-DragoNN predictor (transcriptional activity).
+
+**dragonn/**
+> DENs for maximizing the DragoNN predictor (SPI1 transcription factor binding).
+
+**fbgan/**
+> Contains pre-trained GAN and FB-GAN models used in benchmark comparisons.
+
+**gfp/**
+> Contains training data, pre-trained models and generated results for the GFP benchmark comparison.
 
 ### Training & Analysis Notebooks 
 The following jupyter notebooks contain all of the training code & analyses that were part of the paper. We used the following fitness predictors in our analyses: APARENT [(Bogard et. al., 2019)](https://doi.org/10.1016/j.cell.2019.04.046), DragoNN [(Kundaje Lab)](https://github.com/kundajelab/dragonn), MPRA-DragoNN [(Movva et. al., 2019)](https://doi.org/10.1371/journal.pone.0218073) and our own [(Cell line-specific splicing predictor)](https://github.com/johli/splirent). For some of the benchmarks, we use the Feedback-GAN code ([Gupta et. al., 2019](https://doi.org/10.1038/s42256-019-0017-4); [Github](https://github.com/av1659/fbgan)) and CbAS code ([Brookes et. al., 2019](https://arxiv.org/abs/1901.10060); [Github](https://github.com/dhbrookes/CbAS)).
