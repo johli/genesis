@@ -1,9 +1,9 @@
 ![DEN Logo](https://github.com/johli/genesis/blob/master/den_github_logo.png?raw=true)
 
 # Deep Exploration in Sequence Generation
-Code for training deep generative models of DNA, RNA and protein sequences in Keras. Implements a class of activation-maximizing generative neural networks (Deep Exploration Networks, or DENs) which are optimized with respect to a downstream deep learning predictor. DENs explicitly maximize sequence diversity by sampling *two* independent patterns at each forward pass of backpropagation and imposing a similarity penalty on those samples. DENs optionally maintain the confidence in generated sequences during backpropagation by incorporating variational autoencoders (VAEs) to estimate their likelihood. Likelihood is approximated by importance sampling and gradients are backpropagated from the VAE to the DEN using straight-through (ST) gradients.
+Code for training deep generative models of DNA, RNA and protein sequences in Keras. Implements activation-maximizing generative neural networks (Deep Exploration Networks, or DENs) which are optimized with respect to a downstream fitness predictor. DENs explicitly maximize sequence diversity by sampling *two* independent patterns at each forward pass of backpropagation and imposing a similarity penalty on those samples. DENs optionally maintain the confidence in generated sequences by incorporating variational autoencoders (VAEs) to estimate sequence likelihood. Likelihood is approximated by importance sampling and gradients are backpropagated from the VAE to the DEN using straight-through (ST) gradients.
 
-The generators are trained in a closed loop of backpropagation to jointly maximize sequence diversity and predicted fitness. The framework is described in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)".
+DENs are trained to jointly maximize sequence diversity and predicted fitness. The framework is described in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)".
 
 *1st Conference on Machine Learning in Computational Biology, (MLCB 2019), Vancouver, Canada.
 
@@ -16,7 +16,7 @@ The generators are trained in a closed loop of backpropagation to jointly maximi
 - Implements deep convolutional- and residual generative neural networks.
 - Supports vanilla, class-conditional and inverse-regression generators.
 - Generators support one-hot sampling, enabling end-to-end training via straight-through gradients.
-- Optionally maintain likelihood in the generated sequences during training by using importance sampling of a pre-trained variational autoencoder.
+- Maintain sequence likelihood during training by importance sampling of a pre-trained variational autoencoder.
 
 ### Installation
 Install by cloning or forking the [github repository](https://github.com/johli/genesis.git):
@@ -45,8 +45,7 @@ To aid reproducibility, we provide access to all trained models via the google d
 > DENs for generating sequences with target (differential) 5' splice donor usage proportions.
 
 ### Training & Analysis Notebooks 
-The following jupyter notebooks contain all of the training code & analyses that were part of the paper.
-We also include additional analyses and models which users may find useful. We used the following fitness predictors in our analyses: APARENT [(Bogard et. al., 2019)](https://doi.org/10.1016/j.cell.2019.04.046), DragoNN [(Kundaje Lab)](https://github.com/kundajelab/dragonn), MPRA-DragoNN [(Movva et. al., 2019)](https://doi.org/10.1371/journal.pone.0218073) and our own [(Cell line-specific splicing predictor)](https://github.com/johli/splirent). For some of the benchmarks, we use the Feedback-GAN code ([Gupta et. al., 2019](https://doi.org/10.1038/s42256-019-0017-4); [Github](https://github.com/av1659/fbgan)) and CbAS code ([Brookes et. al., 2019](https://arxiv.org/abs/1901.10060); [Github](https://github.com/dhbrookes/CbAS)).
+The following jupyter notebooks contain all of the training code & analyses that were part of the paper. We used the following fitness predictors in our analyses: APARENT [(Bogard et. al., 2019)](https://doi.org/10.1016/j.cell.2019.04.046), DragoNN [(Kundaje Lab)](https://github.com/kundajelab/dragonn), MPRA-DragoNN [(Movva et. al., 2019)](https://doi.org/10.1371/journal.pone.0218073) and our own [(Cell line-specific splicing predictor)](https://github.com/johli/splirent). For some of the benchmarks, we use the Feedback-GAN code ([Gupta et. al., 2019](https://doi.org/10.1038/s42256-019-0017-4); [Github](https://github.com/av1659/fbgan)) and CbAS code ([Brookes et. al., 2019](https://arxiv.org/abs/1901.10060); [Github](https://github.com/dhbrookes/CbAS)).
 
 #### Alternative Polyadenylation
 Training and evaluation of Exploration networks for engineering Alternative Polyadenylation signals.
@@ -89,9 +88,9 @@ Notebook 0b*: VAE Training Script (Strong APA - Annealed) ([beta = 1.0](https://
 (*Note*: These versions are not used in downstream analyses, but included to show that beta-annealing does not significantly improve separability between Strong / Weak APA test sets. Compare to non-annealed VAEs with beta = 1.0 above.)<br/>
 
 [Notebook 1: Evaluate Likelihood-bounded DENs (Weak VAE)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_lower_fitness_eval_generators.ipynb)<br/>
-Notebook 1a/b/c/d: DEN Training Scripts (Weak VAE) ([Only Fitness](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_only_fitness.ipynb) | [Margin -2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_vae_margin_neg_2_lower_fitness.ipynb) | [Margin 0](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_margin_0_lower_fitness.ipynb) | [Margin +2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_vae_margin_pos_2_lower_fitness.ipynb))<br/>
+Notebook 1a/b/c/d: DEN Training Scripts (Weak VAE) ([Only Fitness](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_only_fitness.ipynb) | [Margin -2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_margin_neg_2_lower_fitness.ipynb) | [Margin 0](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_margin_0_lower_fitness.ipynb) | [Margin +2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_weak_margin_pos_2_lower_fitness.ipynb))<br/>
 [Notebook 2: Evaluate Likelihood-bounded DENs (Strong VAE)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_lower_fitness_eval_generators.ipynb)<br/>
-Notebook 2a/b/c/d: DEN Training Scripts (Strong VAE) ([Only Fitness](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_only_fitness.ipynb) | [Margin -2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_margin_neg_2_lower_fitness.ipynb) | [Margin 0](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_margin_0_lower_fitness.ipynb) | [Margin +2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_vae_margin_pos_2_lower_fitness.ipynb))<br/>
+Notebook 2a/b/c/d: DEN Training Scripts (Strong VAE) ([Only Fitness](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_only_fitness.ipynb) | [Margin -2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_margin_neg_2_lower_fitness.ipynb) | [Margin 0](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_margin_0_lower_fitness.ipynb) | [Margin +2](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_doubledope_kl_vae_strong_margin_pos_2_lower_fitness.ipynb))<br/>
 
 #### Alternative Splicing
 Training and evaluation of Exploration networks for engineering (differential) Alternative Splicing.
@@ -106,9 +105,9 @@ Training and evaluation of Exploration networks for engineering (differential) A
 Evaluation of *Likelihood-bounded* DENs for engineering GFP variants. Here we combine importance sampling of a variational autoencoder (VAE) and straight-through approximation to propagate likelihood gradients to the generator. The benchmarking test bed is adapted from ([Brookes et. al., 2019](https://arxiv.org/abs/1901.10060); [Github](https://github.com/dhbrookes/CbAS)).
 
 [Notebook 0: Importance-Sampled Train Set Likelihoods (VAE)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/gfp_test_vaes.ipynb)<br/>
-[Notebook 1: Likelihood-bounded DEN Training](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/gfp_sf_kl_den_repeats_with_edit_distances.ipynb)<br/>
-[Notebook 2a: Plot Bar Chart Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/plotting_kl_den_sf_with_edit_distances.ipynb)<br/>
-[Notebook 2b: Plot Trajectory Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/plotting_kl_den_sf_traj.ipynb)<br/>
+[Notebook 1: Likelihood-bounded DEN Training](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/gfp_kl_den_with_edit_distances.ipynb)<br/>
+[Notebook 2a: Plot Bar Chart Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/plotting_kl_den_with_edit_distances.ipynb)<br/>
+[Notebook 2b: Plot Trajectory Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/gfp/plotting_kl_den_traj.ipynb)<br/>
 
 #### SPI1 TF Binding (DragoNN)
 Benchmark evaluation for the DragoNN fitness predictor.
