@@ -14,9 +14,6 @@ import isolearn.keras as iso
 
 import numpy as np
 
-#GENESIS Predictor helper functions
-
-
 #GENESIS Predictor Model definitions
 
 #Predictor that predicts the function of the generated input sequence
