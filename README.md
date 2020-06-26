@@ -3,9 +3,11 @@
 # Deep Exploration in Sequence Generation
 Code for training deep generative models of DNA, RNA and protein sequences in Keras. Implements activation-maximizing generative neural networks (Deep Exploration Networks, or DENs) which are optimized with respect to a downstream fitness predictor. DENs explicitly maximize sequence diversity by sampling *two* independent patterns at each forward pass of backpropagation and imposing a similarity penalty on those samples. DENs optionally maintain the confidence in generated sequences by incorporating variational autoencoders (VAEs) to estimate sequence likelihood. Likelihood is approximated by importance sampling and gradients are backpropagated from the VAE to the DEN using straight-through (ST) gradients.
 
-DENs are trained to jointly maximize sequence diversity and predicted fitness. The framework is described in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)".
+DENs are trained to jointly maximize sequence diversity and predicted fitness. The framework was first presented in a MLCB 2019* conference paper, "[Deep exploration networks for rapid engineering of functional DNA sequences](https://github.com/johli/genesis/blob/master/mlcb_exploration_nets.pdf?raw=true)". An extensive description and analysis of DENs was published in [Linder *et al*, Cell Systems 2020](https://doi.org/10.1016/j.cels.2020.05.007).
 
 *1st Conference on Machine Learning in Computational Biology, (MLCB 2019), Vancouver, Canada.
+
+Contact *jlinder2 (at) cs.washington.edu* for any questions about the model or data.
 
 #### Highlights
 - Deep generative neural networks for DNA, RNA & protein sequences.
