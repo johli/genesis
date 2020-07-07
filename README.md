@@ -88,6 +88,7 @@ Notebook 0c: APA VAE Training Script (beta = 0.85) ([Annealed](https://nbviewer.
 <br/>
 
 Below are two notebooks that were not included in the main paper, but are kept here as additional analysis for interested users. The first notebook trains a Wasserstein-GAN on APA sequences from the ALIEN1 dataset. The second notebook trains a DEN that learns to produce a distribution of optimal GAN seeds which result in maximally strong, diverse APA sequences. It is a means of conditioning a pre-trained GAN.
+
 [Extra 1: APA Sequence GAN (ALIEN1)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/gan/train_sequence_wgan_old_resnet_4_blocks_disc_convnet_multisample_instancenorm_normal_simple.ipynb)<br/>
 [Extra 2: Max APA Isoform GANception (ALIEN1)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/ganception/apa_max_isoform_genesis_wgan_simple_singlesample_descent_normal_latent_similarity.ipynb)<br/>
 
