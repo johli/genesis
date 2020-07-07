@@ -86,9 +86,10 @@ Notebook 0c: APA VAE Training Script (beta = 0.85) ([Annealed](https://nbviewer.
 [Notebook 7a: Benchmark Comparison](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_models.ipynb)<br/>
 [Notebook 7b: Benchmark Comparison (Computational Cost)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/apa_max_isoform_genesis_simple_eval_basinhopping_trajs.ipynb)<br/>
 <br/>
-[Extra 1: Native Human pA Sequence GAN (APADB)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/gan/train_sequence_sngan_new_resnet_multisample_batchnorm_normal_apadb.ipynb)<br/>
-[Extra 2: Native Human pA Sequence VAE (APADB)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/vae/train_sequence_vae_all_code_partials_apadb_resnet_strided_encoder_len_160_low_kl.ipynb)<br/>
-[Extra 3: Max APA Isoform GANception (ALIEN1)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/ganception/apa_max_isoform_genesis_wgan_simple_singlesample_descent_normal_latent_similarity.ipynb)<br/>
+
+Below are two notebooks that were not included in the main paper, but are kept here as additional analysis for interested users. The first notebook trains a Wasserstein-GAN on APA sequences from the ALIEN1 dataset. The second notebook trains a DEN that learns to produce a distribution of optimal GAN seeds which result in maximally strong, diverse APA sequences. It is a means of conditioning a pre-trained GAN.
+[Extra 1: APA Sequence GAN (ALIEN1)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/gan/train_sequence_wgan_old_resnet_4_blocks_disc_convnet_multisample_instancenorm_normal_simple.ipynb)<br/>
+[Extra 2: Max APA Isoform GANception (ALIEN1)](https://nbviewer.jupyter.org/github/johli/genesis/blob/master/analysis/apa/ganception/apa_max_isoform_genesis_wgan_simple_singlesample_descent_normal_latent_similarity.ipynb)<br/>
 
 #### Alternative Polyadenylation (Likelihood-bounded)
 Addtional examples of engineering Alternative Polyadenylation signals using *Likelihood-bounded* Exploration networks. We combine importance sampling of a variational autoencoder (VAE) and straight-through approximation to propagate likelihood gradients to the generator.
