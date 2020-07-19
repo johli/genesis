@@ -18,7 +18,7 @@ Contact *jlinder2 (at) cs.washington.edu* for any questions about the model or d
 - Implements deep convolutional- and residual generative neural networks.
 - Supports vanilla, class-conditional and inverse-regression generators.
 - Generators support one-hot sampling, enabling end-to-end training via straight-through gradients.
-- Maintain sequence likelihood during training by importance sampling of a pre-trained variational autoencoder.
+- Maintains sequence likelihood during training by importance sampling of a pre-trained variational autoencoder.
 
 ### Installation
 Install by cloning or forking the [github repository](https://github.com/johli/genesis.git):
@@ -43,16 +43,16 @@ To aid reproducibility, we provide access to all trained models via the google d
 Unzip each compressed model archive in the corresponding sub-folder of the *analysis* root folder in the Github repo. Below follows a brief inventory of the google drive repository:
 
 **apa/**
-> Deep Exploration Networks (DENs) for generating sequences with target/maximal APA isoform proportions and cleavage. Contains several model versions used in various benchmark comparisons.
+> Models for generating sequences with target/maximal APA isoform proportions and cleavage. Contains several model versions used in different benchmark comparisons.
 
 **splicing/**
-> DENs for generating sequences with target (differential) 5' splice donor usage proportions.
+> Models for generating sequences with target (differential) 5' splice donor usage proportions.
 
 **mpradragonn/**
-> DENs for maximizing the MPRA-DragoNN predictor (transcriptional activity).
+> Models for maximizing the MPRA-DragoNN predictor (transcriptional activity).
 
 **dragonn/**
-> DENs for maximizing the DragoNN predictor (SPI1 transcription factor binding).
+> Models for maximizing the DragoNN predictor (SPI1 transcription factor binding).
 
 **fbgan/**
 > Contains pre-trained GAN and FB-GAN models used in benchmark comparisons.
