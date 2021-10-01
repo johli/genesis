@@ -38,7 +38,7 @@ python setup.py install
 #### Saved Models
 To aid reproducibility, we provide access to all trained models via the google drive link below:
 
-[Model Repository](https://drive.google.com/open?id=11_wlrjrb0ee_UyaT9agMigpIsmGlFZzU)
+[Model Repository](https://drive.google.com/drive/folders/1DgL5aMwhqcKkg_-aIeYA8tlHg9OSehtr?usp=sharing)
 
 Unzip each compressed model archive in the corresponding sub-folder of the *analysis* root folder in the Github repo. Below follows a brief inventory of the google drive repository:
 
